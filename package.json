@@ -16,6 +16,14 @@
   "bugs": {
     "url": "https://github.com/testiumjs/testium-example-app/issues"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "license": {
+      "exclude": [
+        "."
+      ]
+    }
+  },
   "homepage": "https://github.com/testiumjs/testium-example-app#readme",
   "dependencies": {
     "node-static": "~0.7.7"
