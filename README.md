@@ -44,8 +44,8 @@ Useful for testing timeout behavior, making sure the test suite can recover.
 
 ### `/blackholed-resource.html`
 
-Simulates a resources required by the page (a script tag) never fully loading,
-preventing the page load to finish.
+Simulates a resource required by the page (a script tag) never fully loading,
+preventing the page load from finishing.
 
 
 ### `/dynamic.html`
