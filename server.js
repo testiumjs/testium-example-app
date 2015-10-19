@@ -2,6 +2,7 @@
 'use strict';
 
 var http = require('http');
+var parseUrl = require('url').parse;
 
 var StaticServer = require('node-static').Server;
 
@@ -39,7 +40,8 @@ function createServer() {
   var file = new StaticServer(__dirname + '/public');
 
   return http.createServer(function(request, response) {
-    switch (request.url) {
+    var parsedUrl = parseUrl(request.url)
+    switch (parsedUrl.pathname) {
     case '/echo':
       return echo(request, response);
 
