@@ -102,7 +102,11 @@ For testing popup & iframe related features.
 #### `/frame.html`
 
 Displayed as `iframe#cool-frame` and contains `div.in-iframe-only`
-and `frame#nested-frame`. The nested frame contains `div#nested-frame-div`.
+and `iframe#nested-frame` (see `/nested-frame.html`).
+
+#### `/nested-frame.html`
+
+This page contains `div#nested-frame-div`.
 
 #### `/popup.html`
 
