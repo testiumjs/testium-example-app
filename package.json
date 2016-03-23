@@ -40,7 +40,7 @@
   },
   "files": [
     "*.js",
-    "lib"
+    "public"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
