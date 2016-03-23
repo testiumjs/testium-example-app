@@ -2,31 +2,50 @@
   "name": "testium-example-app",
   "version": "2.0.0",
   "description": "Used to test testium itself",
+  "license": "BSD-3-Clause",
   "main": "server.js",
   "bin": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "homepage": "https://github.com/testiumjs/testium-example-app#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/testiumjs/testium-example-app.git"
+    "url": "git+ssh://git@github.com/testiumjs/testium-example-app"
   },
-  "author": "Jan Krems <jan.krems@groupon.com>",
-  "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/testiumjs/testium-example-app/issues"
+    "url": "https://github.com/testiumjs/testium-example-app/issues",
+    "chat": "http://signup.testiumjs.com/"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
+  "scripts": {
+    "start": "node server.js",
+    "pretest": "eslint lib test",
+    "test": "mocha",
+    "posttest": "nlm verify"
+  },
+  "nlm": {
     "license": {
-      "exclude": [
-        "."
+      "files": [
+        "lib"
       ]
     }
   },
-  "homepage": "https://github.com/testiumjs/testium-example-app#readme",
   "dependencies": {
     "node-static": "~0.7.7"
+  },
+  "devDependencies": {
+    "assertive": "^2.0.0",
+    "eslint": "^1.0.0",
+    "eslint-config-groupon": "^2.0.0",
+    "mocha": "^2.0.0",
+    "nlm": "^2.0.0"
+  },
+  "author": {
+    "name": "Jan Krems",
+    "email": "jan.krems@groupon.com"
+  },
+  "files": [
+    "*.js",
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
