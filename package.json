@@ -16,8 +16,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "pretest": "eslint lib test",
-    "test": "mocha",
+    "test": "eslint server.js",
     "posttest": "nlm verify"
   },
   "nlm": {
@@ -31,15 +30,13 @@
     "node-static": "~0.7.7"
   },
   "devDependencies": {
-    "assertive": "^2.0.0",
     "eslint": "^1.0.0",
     "eslint-config-groupon": "^2.0.0",
-    "mocha": "^2.0.0",
     "nlm": "^2.0.0"
   },
   "author": {
-    "name": "Jan Krems",
-    "email": "jan.krems@groupon.com"
+    "name": "Groupon",
+    "email": "opensource@groupon.com"
   },
   "files": [
     "*.js",
