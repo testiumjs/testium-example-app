@@ -1,3 +1,9 @@
+### 2.1.0
+
+* feat: add a draggable element test page - **[@dbushong](https://github.com/dbushong)** [#6](https://github.com/testiumjs/testium-example-app/pull/6)
+  - [`8252fd6`](https://github.com/testiumjs/testium-example-app/commit/8252fd6015ca2505719739359837d1a9b734d3d1) **feat:** add a draggable element test page
+
+
 ### 2.0.2
 
 * chore: Ship public and server to npm - **[@jkrems](https://github.com/jkrems)** [#5](https://github.com/testiumjs/testium-example-app/pull/5)
