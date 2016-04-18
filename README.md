@@ -111,3 +111,7 @@ This page contains `div#nested-frame-div`.
 #### `/popup.html`
 
 Can be opened by clicking on `button#open-popup` and contains `div.popup-only`.
+
+#### `/draggable.html`
+
+Displays a draggable element for testing buttonDown/Up and movePointer...

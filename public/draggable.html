@@ -1,0 +1,42 @@
+<!doctype html>
+<body>
+  <style>
+    body { height: 600px; }
+    #box {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+  </style>
+  <div id=box>whee</div>
+  <script>
+    var startMouse
+      , startBox
+      , body = document.body
+      , box = document.getElementById('box');
+    function mouseDown(ev) {
+      startMouse = [ev.clientX, ev.clientY];
+      startBox = box.getBoundingClientRect();
+      body.addEventListener('mouseup', mouseUp, false);
+      body.addEventListener('mousemove', mouseMove, false);
+      ev.preventDefault(); return false;
+    }
+    function mouseMove(ev) {
+      var dx = ev.clientX - startMouse[0]
+        , dy = ev.clientY - startMouse[1];
+      box.style.left = startBox.left + dx + 'px';
+      box.style.top  = startBox.top + dy + 'px';
+    }
+    function mouseUp(ev) {
+      body.removeEventListener('mouseup', mouseUp);
+      body.removeEventListener('mousemove', mouseMove);
+      ev.preventDefault(); return false;
+    }
+    window.addEventListener('load', function () {
+      box.addEventListener('mousedown', mouseDown, false);
+    });
+  </script>
+</body>
