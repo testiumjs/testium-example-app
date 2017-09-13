@@ -1,3 +1,9 @@
+### 2.1.1
+
+* fix: node-static module is broken; remove it - **[@dbushong](https://github.com/dbushong)** [#7](https://github.com/testiumjs/testium-example-app/pull/7)
+  - [`dc3dfb2`](https://github.com/testiumjs/testium-example-app/commit/dc3dfb2f7b4454a1a0598bdb08964433ddacb1e5) **fix:** node-static module is broken; remove it
+
+
 ### 2.1.0
 
 * feat: add a draggable element test page - **[@dbushong](https://github.com/dbushong)** [#6](https://github.com/testiumjs/testium-example-app/pull/6)
