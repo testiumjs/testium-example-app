@@ -26,9 +26,7 @@
       ]
     }
   },
-  "dependencies": {
-    "node-static": "~0.7.7"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^1.0.0",
     "eslint-config-groupon": "^2.0.0",
