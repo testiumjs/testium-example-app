@@ -3,8 +3,8 @@
 
 var http = require('http');
 var parseUrl = require('url').parse;
-
-var StaticServer = require('node-static').Server;
+var path = require('path');
+var fs = require('fs');
 
 function echo(request, response) {
   var data = {
@@ -36,16 +36,20 @@ function crash(response) {
   response.socket.destroy();
 }
 
-function serveFromDisk(file, request, response) {
-  var listener = request.addListener('end', function serveFile() {
-    file.serve(request, response);
-  });
-  listener.resume();
+function serveFromDisk(pathname, response) {
+  var safePath = pathname.replace(/\.\./g, '').replace(/^\/+/, '');
+  if (safePath === '') safePath = 'index.html';
+  var filePath = path.resolve(__dirname, 'public', safePath);
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    response.setHeader('Content-Type', 'text/html');
+    fs.createReadStream(filePath).pipe(response);
+  } else {
+    response.statusCode = 404;
+    response.end('File Not Found');
+  }
 }
 
 function createServer() {
-  var file = new StaticServer(__dirname + '/public');
-
   return http.createServer(function handleRequest(request, response) {
     var parsedUrl = parseUrl(request.url);
     switch (parsedUrl.pathname) {
@@ -62,7 +66,7 @@ function createServer() {
         return undefined;
 
       default:
-        return serveFromDisk(file, request, response);
+        return serveFromDisk(parsedUrl.pathname, response);
     }
   });
 }
