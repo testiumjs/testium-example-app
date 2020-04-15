@@ -1,3 +1,10 @@
+### 2.2.0 - 2020-04-15
+
+* feat: add image test page & drop node 6 support - **[@aaarichter](https://github.com/aaarichter)** [#8](https://github.com/testiumjs/testium-example-app/pull/8)
+  - [`5dba6bc`](https://github.com/testiumjs/testium-example-app/commit/5dba6bc746c2e652e2d6b390bbf75bb223fdab53) **refactor:** drop node support for Node 6 and below
+  - [`e255fff`](https://github.com/testiumjs/testium-example-app/commit/e255fff35d24ce02d62922522b2d5b2fe499055c) **feat:** add image test page
+
+
 ### 2.1.1
 
 * fix: node-static module is broken; remove it - **[@dbushong](https://github.com/dbushong)** [#7](https://github.com/testiumjs/testium-example-app/pull/7)
