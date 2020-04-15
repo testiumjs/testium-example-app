@@ -1,13 +1,15 @@
 #!/usr/bin/env node
+
 'use strict';
 
-var http = require('http');
-var parseUrl = require('url').parse;
-var path = require('path');
-var fs = require('fs');
+const http = require('http');
+const parseUrl = require('url').parse;
+const path = require('path');
+const fs = require('fs');
+const console = require('console');
 
 function echo(request, response) {
-  var data = {
+  const data = {
     ip: request.connection.remoteAddress,
     method: request.method,
     url: request.url,
@@ -15,12 +17,12 @@ function echo(request, response) {
     headers: request.headers,
   };
 
-  request.on('data', function appendData(buffer) {
+  request.on('data', buffer => {
     data.body += buffer.toString();
   });
 
-  request.on('end', function sendResponse() {
-    var body = JSON.stringify(data, null, 2);
+  request.on('end', () => {
+    const body = JSON.stringify(data, null, 2);
     response.setHeader('Content-Type', 'application/json');
     response.end(body);
   });
@@ -37,9 +39,9 @@ function crash(response) {
 }
 
 function serveFromDisk(pathname, response) {
-  var safePath = pathname.replace(/\.\./g, '').replace(/^\/+/, '');
+  let safePath = pathname.replace(/\.\./g, '').replace(/^\/+/, '');
   if (safePath === '') safePath = 'index.html';
-  var filePath = path.resolve(__dirname, 'public', safePath);
+  const filePath = path.resolve(__dirname, 'public', safePath);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     response.setHeader('Content-Type', 'text/html');
     fs.createReadStream(filePath).pipe(response);
@@ -50,8 +52,8 @@ function serveFromDisk(pathname, response) {
 }
 
 function createServer() {
-  return http.createServer(function handleRequest(request, response) {
-    var parsedUrl = parseUrl(request.url);
+  return http.createServer((request, response) => {
+    const parsedUrl = parseUrl(request.url);
     switch (parsedUrl.pathname) {
       case '/echo':
         return echo(request, response);
@@ -63,7 +65,7 @@ function createServer() {
         return crash(response);
 
       case '/blackhole':
-        return undefined;
+        return null;
 
       default:
         return serveFromDisk(parsedUrl.pathname, response);
@@ -71,7 +73,7 @@ function createServer() {
   });
 }
 
-var testApp = module.exports = {
+const testApp = (module.exports = {
   listen: function listen(port, callback) {
     this.server = createServer();
     this.server.listen(port, callback);
@@ -81,12 +83,12 @@ var testApp = module.exports = {
     this.server.close(callback);
     this.server = null;
   },
-};
+});
 
 if (module === require.main) {
   if (process.env.never_listen) {
     console.log('Refusing to listen');
-    setTimeout(function noop() {}, 100000);
+    setTimeout(() => {}, 100000);
   } else {
     testApp.listen(process.env.PORT || 4003, function onListen() {
       console.log('Listening on port %j', this.address().port);
