@@ -1,3 +1,9 @@
+### 2.2.1 - 2020-04-16
+
+* fix: transparent pixel src - **[@aaarichter](https://github.com/aaarichter)** [#9](https://github.com/testiumjs/testium-example-app/pull/9)
+  - [`fc2aee9`](https://github.com/testiumjs/testium-example-app/commit/fc2aee99c03063786dac658ee81305e6117d2d82) **fix:** transparent pixel src
+
+
 ### 2.2.0 - 2020-04-15
 
 * feat: add image test page & drop node 6 support - **[@aaarichter](https://github.com/aaarichter)** [#8](https://github.com/testiumjs/testium-example-app/pull/8)
