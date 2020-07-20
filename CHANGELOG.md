@@ -1,3 +1,10 @@
+### 2.2.2 - 2020-07-20
+
+* Bump lodash from 4.17.15 to 4.17.19 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#10](https://github.com/testiumjs/testium-example-app/pull/10)
+  - [`b7b54b8`](https://github.com/testiumjs/testium-example-app/commit/b7b54b8970a02ae1114bf98c6747cfe2cf7b1dae) **chore:** Bump lodash from 4.17.15 to 4.17.19 - see: [4](- [Commits](https://github.com/lodash/lodash/compare/4)
+  - [`42853c1`](https://github.com/testiumjs/testium-example-app/commit/42853c16dd5a2d952740ae03edbd506caa036e09) **docs:** update CONTRIBUTING.md
+
+
 ### 2.2.1 - 2020-04-16
 
 * fix: transparent pixel src - **[@aaarichter](https://github.com/aaarichter)** [#9](https://github.com/testiumjs/testium-example-app/pull/9)
