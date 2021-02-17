@@ -1,3 +1,9 @@
+### 2.2.3 - 2021-02-17
+
+* chore(deps): Bump ini from 1.3.5 to 1.3.8 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#11](https://github.com/testiumjs/testium-example-app/pull/11)
+  - [`28fc44d`](https://github.com/testiumjs/testium-example-app/commit/28fc44d7c1f95254f4a7a8d8688603e0aa26eda3) **chore:** Bump ini from 1.3.5 to 1.3.8 - see: [v1](- [Commits](https://github.com/isaacs/ini/compare/v1)
+
+
 ### 2.2.2 - 2020-07-20
 
 * Bump lodash from 4.17.15 to 4.17.19 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#10](https://github.com/testiumjs/testium-example-app/pull/10)
