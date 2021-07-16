@@ -17,7 +17,7 @@ function echo(request, response) {
     headers: request.headers,
   };
 
-  request.on('data', buffer => {
+  request.on('data', (buffer) => {
     data.body += buffer.toString();
   });
 
@@ -43,7 +43,11 @@ function serveFromDisk(pathname, response) {
   if (safePath === '') safePath = 'index.html';
   const filePath = path.resolve(__dirname, 'public', safePath);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-    response.setHeader('Content-Type', 'text/html');
+    let mimeType = 'text/html';
+    if (filePath.endsWith('.js')) {
+      mimeType = 'application/javascript';
+    }
+    response.setHeader('Content-Type', mimeType);
     fs.createReadStream(filePath).pipe(response);
   } else {
     response.statusCode = 404;
