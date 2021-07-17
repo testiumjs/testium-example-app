@@ -43,11 +43,11 @@ function serveFromDisk(pathname, response) {
   if (safePath === '') safePath = 'index.html';
   const filePath = path.resolve(__dirname, 'public', safePath);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-    let mimeType = 'text/html';
+    let contentType = 'text/html';
     if (filePath.endsWith('.js')) {
-      mimeType = 'application/javascript';
+      contentType = 'application/javascript';
     }
-    response.setHeader('Content-Type', mimeType);
+    response.setHeader('Content-Type', contentType);
     fs.createReadStream(filePath).pipe(response);
   } else {
     response.statusCode = 404;
