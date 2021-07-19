@@ -3,7 +3,6 @@
 'use strict';
 
 const http = require('http');
-const parseUrl = require('url').parse;
 const path = require('path');
 const fs = require('fs');
 const console = require('console');
@@ -17,7 +16,7 @@ function echo(request, response) {
     headers: request.headers,
   };
 
-  request.on('data', (buffer) => {
+  request.on('data', buffer => {
     data.body += buffer.toString();
   });
 
@@ -57,8 +56,8 @@ function serveFromDisk(pathname, response) {
 
 function createServer() {
   return http.createServer((request, response) => {
-    const parsedUrl = parseUrl(request.url);
-    switch (parsedUrl.pathname) {
+    const { pathname } = new URL(request.url, `http://${request.headers.host}`);
+    switch (pathname) {
       case '/echo':
         return echo(request, response);
 
@@ -72,7 +71,7 @@ function createServer() {
         return null;
 
       default:
-        return serveFromDisk(parsedUrl.pathname, response);
+        return serveFromDisk(pathname, response);
     }
   });
 }
