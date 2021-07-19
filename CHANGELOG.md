@@ -1,3 +1,11 @@
+### v2.3.0 (2021-07-19)
+<a id="v2.3.0"></a>
+#### 🏡 Internal
+
+* [#20](https://github.com/testiumjs/testium-example-app/pull/20) migrate to gh actions ([@aotarola](https://github.com/aotarola))
+* [`9fe0684`](https://github.com/testiumjs/testium-example-app/commit/9fe06845b66086fcbb9f5ef2fd36ceb448d8f695) chore: downgrade nlm version
+
+
 ### 2.2.4 - 2021-04-01
 
 * chore(deps): Bump y18n from 4.0.0 to 4.0.1 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#12](https://github.com/testiumjs/testium-example-app/pull/12)
