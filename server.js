@@ -17,7 +17,7 @@ function echo(request, response) {
     headers: request.headers,
   };
 
-  request.on('data', (buffer) => {
+  request.on('data', buffer => {
     data.body += buffer.toString();
   });
 

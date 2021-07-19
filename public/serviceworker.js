@@ -1,13 +1,15 @@
-var staticCacheName = 'pwa';
+'use strict';
 
-self.addEventListener('install', (e) =>
-  e.waitUntil(caches.open(staticCacheName).then((cache) => cache.addAll(['/'])))
+const staticCacheName = 'pwa';
+
+self.addEventListener('install', e =>
+  e.waitUntil(caches.open(staticCacheName).then(cache => cache.addAll(['/'])))
 );
 
-self.addEventListener('fetch', (event) =>
+self.addEventListener('fetch', event =>
   event.respondWith(
     caches
       .match(event.request)
-      .then((response) => response || fetch(event.request))
+      .then(response => response || fetch(event.request))
   )
 );
