@@ -3,7 +3,6 @@
 'use strict';
 
 const http = require('http');
-const parseUrl = require('url').parse;
 const path = require('path');
 const fs = require('fs');
 const console = require('console');
@@ -43,7 +42,11 @@ function serveFromDisk(pathname, response) {
   if (safePath === '') safePath = 'index.html';
   const filePath = path.resolve(__dirname, 'public', safePath);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-    response.setHeader('Content-Type', 'text/html');
+    let contentType = 'text/html';
+    if (filePath.endsWith('.js')) {
+      contentType = 'application/javascript';
+    }
+    response.setHeader('Content-Type', contentType);
     fs.createReadStream(filePath).pipe(response);
   } else {
     response.statusCode = 404;
@@ -53,8 +56,8 @@ function serveFromDisk(pathname, response) {
 
 function createServer() {
   return http.createServer((request, response) => {
-    const parsedUrl = parseUrl(request.url);
-    switch (parsedUrl.pathname) {
+    const { pathname } = new URL(request.url, `http://${request.headers.host}`);
+    switch (pathname) {
       case '/echo':
         return echo(request, response);
 
@@ -68,7 +71,7 @@ function createServer() {
         return null;
 
       default:
-        return serveFromDisk(parsedUrl.pathname, response);
+        return serveFromDisk(pathname, response);
     }
   });
 }

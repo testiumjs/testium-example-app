@@ -1,0 +1,17 @@
+{
+    "extends": "groupon",
+    "overrides": [
+        {
+            "env": {
+                "mocha": true
+            },
+            "files": "*.test.js"
+        },
+        {
+            "env": {
+                "browser": true
+            },
+            "files": "public/*.js"
+        }
+    ]
+}
