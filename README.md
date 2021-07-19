@@ -1,7 +1,7 @@
 [![nlm-chat](https://img.shields.io/badge/chat-http%3A%2F%2Fsignup.testiumjs.com%2F-F4D03F?logo=chat&logoColor=white)](http://signup.testiumjs.com/)
 [![nlm-github](https://img.shields.io/badge/github-testiumjs%2Ftestium--example--app%2Fissues-F4D03F?logo=github&logoColor=white)](https://github.com/testiumjs/testium-example-app/issues)
-![nlm-node](https://img.shields.io/badge/node-%3E%3D8.3.0-blue?logo=node.js&logoColor=white)
-![nlm-version](https://img.shields.io/badge/version-2.3.0-blue?logo=version&logoColor=white)
+![nlm-node](https://img.shields.io/badge/node-%3E%3D12-blue?logo=node.js&logoColor=white)
+![nlm-version](https://img.shields.io/badge/version-2.4.0-blue?logo=version&logoColor=white)
 # Testium Example App
 
 This application is used to test testium itself.

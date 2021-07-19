@@ -1,3 +1,10 @@
+### v2.4.0 (2021-07-19)
+<a id="v2.4.0"></a>
+#### 🏡 Internal
+
+* [#21](https://github.com/testiumjs/testium-example-app/pull/21) add pwa test page ([@aotarola](https://github.com/aotarola))
+
+
 ### v2.3.0 (2021-07-19)
 <a id="v2.3.0"></a>
 #### 🏡 Internal
