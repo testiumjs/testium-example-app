@@ -1,0 +1,23 @@
+{
+    "background_color": "#5900b3",
+    "description": "Just a PWA test",
+    "display": "standalone",
+    "icons": [
+        {
+            "purpose": "any maskable",
+            "sizes": "192x192",
+            "src": "images/icon-maskable-192x192.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "512x512",
+            "src": "images/icon-512x512.png",
+            "type": "image/png"
+        }
+    ],
+    "name": "PWA Test",
+    "scope": ".",
+    "short_name": "PWA",
+    "start_url": "pwa.html",
+    "theme_color": "black"
+}
