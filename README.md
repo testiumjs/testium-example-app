@@ -119,3 +119,7 @@ Can be opened by clicking on `button#open-popup` and contains `div.popup-only`.
 #### `/draggable.html`
 
 Displays a draggable element for testing buttonDown/Up and movePointer...
+
+#### `/pwa.html`
+
+Displays an installable minimal PWA testing page (it passes lighthouse audit with a score of 100)
